@@ -6,17 +6,17 @@ export const THEMES = [
   },
   {
     name: "retro",
-    label: "Retro",
+    label: "Retrô",
     colors: ["#e2d5bc", "#ef9995", "#a4cbb4"],
   },
   {
     name: "coffee",
-    label: "Coffee",
+    label: "Café",
     colors: ["#20161F", "#A67C58", "#807666"],
   },
   {
     name: "forest",
-    label: "Forest",
+    label: "Floresta",
     colors: ["#171212", "#2B4C3F", "#6BAA75"],
   },
   {
@@ -31,37 +31,37 @@ export const THEMES = [
   },
   {
     name: "luxury",
-    label: "Luxury",
+    label: "Luxo",
     colors: ["#171618", "#B6862D", "#E2C697"],
   },
   {
     name: "autumn",
-    label: "Autumn",
+    label: "Outono",
     colors: ["#D8B4A0", "#D27548", "#BA4A00"],
   },
   {
     name: "valentine",
-    label: "Valentine",
+    label: "Amor",
     colors: ["#E96D7B", "#FF8FAB", "#FFB3C6"],
   },
   {
     name: "aqua",
-    label: "Aqua",
+    label: "Água",
     colors: ["#2DD4BF", "#06B6D4", "#0EA5E9"],
   },
   {
     name: "business",
-    label: "Business",
+    label: "Profissional",
     colors: ["#1C4E80", "#0091D5", "#7DB9DE"],
   },
   {
     name: "night",
-    label: "Night",
+    label: "Noite",
     colors: ["#0F172A", "#334155", "#64748B"],
   },
   {
     name: "dracula",
-    label: "Dracula",
+    label: "Drácula",
     colors: ["#282A36", "#BD93F9", "#FF79C6"],
   },
 ];

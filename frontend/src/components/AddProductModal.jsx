@@ -7,20 +7,20 @@ function AddProductModal() {
   return (
     <dialog id="add_product_modal" className="modal">
       <div className="modal-box">
-        {/* CLOSE BUTTON */}
+        {/* BOTÃO FECHAR */}
         <form method="dialog">
           <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">X</button>
         </form>
 
-        {/* MODAL HEADER */}
-        <h3 className="font-bold text-xl mb-8">Add New Product</h3>
+        {/* CABEÇALHO DO MODAL */}
+        <h3 className="font-bold text-xl mb-8">Adicionar novo produto</h3>
 
         <form onSubmit={addProduct} className="space-y-6">
           <div className="grid gap-6">
-            {/* PRODUCT NAME INPUT */}
+            {/* CAMPO NOME DO PRODUTO */}
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-base font-medium">Product Name</span>
+                <span className="label-text text-base font-medium">Nome do produto</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-base-content/50">
@@ -28,7 +28,7 @@ function AddProductModal() {
                 </div>
                 <input
                   type="text"
-                  placeholder="Enter product name"
+                  placeholder="Digite o nome do produto"
                   className="input input-bordered w-full pl-10 py-3 focus:input-primary transition-colors duration-200"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -36,10 +36,10 @@ function AddProductModal() {
               </div>
             </div>
 
-            {/* PRODUCT PRICE INPUT */}
+            {/* CAMPO PREÇO DO PRODUTO */}
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-base font-medium">Price</span>
+                <span className="label-text text-base font-medium">Preço</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-base-content/50">
@@ -49,7 +49,7 @@ function AddProductModal() {
                   type="number"
                   min="0"
                   step="0.01"
-                  placeholder="0.00"
+                  placeholder="0,00"
                   className="input input-bordered w-full pl-10 py-3 focus:input-primary transition-colors duration-200"
                   value={formData.price}
                   onChange={(e) => setFormData({ ...formData, price: e.target.value })}
@@ -57,10 +57,10 @@ function AddProductModal() {
               </div>
             </div>
 
-            {/* PRODUCT IMAGE */}
+            {/* URL DA IMAGEM */}
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-base font-medium">Image URL</span>
+                <span className="label-text text-base font-medium">URL da imagem</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-base-content/50">
@@ -68,7 +68,7 @@ function AddProductModal() {
                 </div>
                 <input
                   type="text"
-                  placeholder="https://example.com/image.jpg"
+                  placeholder="https://exemplo.com/imagem.jpg"
                   className="input input-bordered w-full pl-10 py-3 focus:input-primary transition-colors duration-200"
                   value={formData.image}
                   onChange={(e) => setFormData({ ...formData, image: e.target.value })}
@@ -77,11 +77,12 @@ function AddProductModal() {
             </div>
           </div>
 
-          {/* MODAL ACTIONS */}
+          {/* AÇÕES DO MODAL */}
           <div className="modal-action">
             <form method="dialog">
-              <button className="btn btn-ghost">Cancel</button>
+              <button className="btn btn-ghost">Cancelar</button>
             </form>
+
             <button
               type="submit"
               className="btn btn-primary min-w-[120px]"
@@ -92,7 +93,7 @@ function AddProductModal() {
               ) : (
                 <>
                   <PlusCircleIcon className="size-5 mr-2" />
-                  Add Product
+                  Adicionar produto
                 </>
               )}
             </button>
@@ -100,11 +101,12 @@ function AddProductModal() {
         </form>
       </div>
 
-      {/* BACKDROP */}
+      {/* FUNDO */}
       <form method="dialog" className="modal-backdrop">
-        <button>close</button>
+        <button>fechar</button>
       </form>
     </dialog>
   );
 }
+
 export default AddProductModal;

@@ -19,7 +19,7 @@ function HomePage() {
           onClick={() => document.getElementById("add_product_modal").showModal()}
         >
           <PlusCircleIcon className="size-5 mr-2" />
-          Add Product
+          Adicionar Produto
         </button>
         <button className="btn btn-ghost btn-circle" onClick={fetchProducts}>
           <RefreshCwIcon className="size-5" />
@@ -36,9 +36,9 @@ function HomePage() {
             <PackageIcon className="size-12" />
           </div>
           <div className="text-center space-y-2">
-            <h3 className="text-2xl font-semibold ">No products found</h3>
+            <h3 className="text-2xl font-semibold ">Nenhum produto encontrado</h3>
             <p className="text-gray-500 max-w-sm">
-              Get started by adding your first product to the inventory
+              Comece adicionando seu primeiro produto ao estoque.
             </p>
           </div>
         </div>

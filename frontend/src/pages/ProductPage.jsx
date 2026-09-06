@@ -14,6 +14,7 @@ function ProductPage() {
     updateProduct,
     deleteProduct,
   } = useProductStore();
+
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -22,7 +23,7 @@ function ProductPage() {
   }, [fetchProduct, id]);
 
   const handleDelete = async () => {
-    if (window.confirm("Are you sure you want to delete this product?")) {
+    if (window.confirm("Tem certeza de que deseja excluir este produto?")) {
       await deleteProduct(id);
       navigate("/");
     }
@@ -48,11 +49,11 @@ function ProductPage() {
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <button onClick={() => navigate("/")} className="btn btn-ghost mb-8">
         <ArrowLeftIcon className="size-4 mr-2" />
-        Back to Products
+        Voltar aos produtos
       </button>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* PRODUCT IMAGE */}
+        {/* IMAGEM DO PRODUTO */}
         <div className="rounded-lg overflow-hidden shadow-lg bg-base-100">
           <img
             src={currentProduct?.image}
@@ -61,10 +62,10 @@ function ProductPage() {
           />
         </div>
 
-        {/* PRODUCT FORM */}
+        {/* FORMULÁRIO DO PRODUTO */}
         <div className="card bg-base-100 shadow-lg">
           <div className="card-body">
-            <h2 className="card-title text-2xl mb-6">Edit Product</h2>
+            <h2 className="card-title text-2xl mb-6">Editar produto</h2>
 
             <form
               onSubmit={(e) => {
@@ -73,68 +74,92 @@ function ProductPage() {
               }}
               className="space-y-6"
             >
-              {/* PRODUCT NAME */}
+              {/* NOME DO PRODUTO */}
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-base font-medium">Product Name</span>
+                  <span className="label-text text-base font-medium">
+                    Nome do produto
+                  </span>
                 </label>
+
                 <input
                   type="text"
-                  placeholder="Enter product name"
+                  placeholder="Digite o nome do produto"
                   className="input input-bordered w-full"
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                 />
               </div>
 
-              {/* PRODUCT PRICE */}
+              {/* PREÇO DO PRODUTO */}
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-base font-medium">Price</span>
+                  <span className="label-text text-base font-medium">
+                    Preço
+                  </span>
                 </label>
+
                 <input
                   type="number"
                   min="0"
                   step="0.01"
-                  placeholder="0.00"
+                  placeholder="0,00"
                   className="input input-bordered w-full"
                   value={formData.price}
-                  onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, price: e.target.value })
+                  }
                 />
               </div>
 
-              {/* PRODUCT IMAGE URL */}
+              {/* URL DA IMAGEM DO PRODUTO */}
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text text-base font-medium">Image URL</span>
+                  <span className="label-text text-base font-medium">
+                    URL da imagem
+                  </span>
                 </label>
+
                 <input
                   type="text"
-                  placeholder="https://example.com/image.jpg"
+                  placeholder="https://exemplo.com/imagem.jpg"
                   className="input input-bordered w-full"
                   value={formData.image}
-                  onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, image: e.target.value })
+                  }
                 />
               </div>
 
-              {/* FORM ACTIONS */}
+              {/* AÇÕES DO FORMULÁRIO */}
               <div className="flex justify-between mt-8">
-                <button type="button" onClick={handleDelete} className="btn btn-error">
+                <button
+                  type="button"
+                  onClick={handleDelete}
+                  className="btn btn-error"
+                >
                   <Trash2Icon className="size-4 mr-2" />
-                  Delete Product
+                  Excluir produto
                 </button>
 
                 <button
                   type="submit"
                   className="btn btn-primary"
-                  disabled={loading || !formData.name || !formData.price || !formData.image}
+                  disabled={
+                    loading ||
+                    !formData.name ||
+                    !formData.price ||
+                    !formData.image
+                  }
                 >
                   {loading ? (
                     <span className="loading loading-spinner loading-sm" />
                   ) : (
                     <>
                       <SaveIcon className="size-4 mr-2" />
-                      Save Changes
+                      Salvar alterações
                     </>
                   )}
                 </button>
@@ -146,4 +171,5 @@ function ProductPage() {
     </div>
   );
 }
+
 export default ProductPage;
