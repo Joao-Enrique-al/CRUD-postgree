@@ -1,39 +1,33 @@
-<h1 align="center">✨ PERN Stack Tutorial ✨</h1>
+# CRUD com PERN Stack
 
-![Demo App](/frontend/public/screenshot-for-readme.png)
+Aplicação CRUD desenvolvida utilizando a stack **PERN**, com PostgreSQL no banco de dados, Express e Node.js no backend e React no frontend.
 
-Highlights:
+## Tecnologias utilizadas
 
-- 🌟 Tech stack: PERN + TailwindCSS + Daisy UI
-- 🚀 Rate Limiting & Bot Detection
-- 👌 Global state management with Zustand
-- 🐞 Error handling both on the server and client
-- ⭐ Deployment for FREE!
-- ⏳ And much more!
+- PostgreSQL
+- Express.js
+- React
+- Node.js
 
-### Setup .env file
+## Funcionalidades
 
-```js
+- Criar registros
+- Listar registros
+- Atualizar registros
+- Excluir registros
+- Comunicação entre frontend e API REST
+- Persistência dos dados utilizando PostgreSQL
+
+## Configuração
+
+Crie um arquivo `.env` na pasta do backend:
+
+```env
 PORT=3000
 
 PGUSER=...
 PGPASSWORD=...
 PGHOST=...
 PGDATABASE=...
-
 ARCJET_KEY=...
 ARCJET_ENV=development
-```
-
-### Run the API
-
-```shell
-npm run dev
-```
-
-### Run the frontend
-
-```shell
-cd frontend
-npm run dev
-```
